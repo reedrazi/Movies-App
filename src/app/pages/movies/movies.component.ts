@@ -19,11 +19,12 @@ ngOnInit(): void {
     
 }
 getPagedMovies(page:number){
-  this.movieService.searchMovies(3).subscribe(movies=>{
+  this.movieService.searchMovies(page).subscribe(movies=>{
     this.movies=movies;
   })
 }
 onPageChange(event:any){
-  this.getPagedMovies(event.page +1)
+  this.getPagedMovies(event.page + 1)
+  console.log(event.page+1)
 }
 }

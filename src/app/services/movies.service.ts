@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import { MovieDto } from '../model/movies';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { APIKEY } from '../constants/secrets';
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { of } from 'rxjs';
 })
 export class MoviesService {
 baseUrl:String='https://api.themoviedb.org/3';
-ApiKey:String='dccfbda5f63e1ad9fbc455b4667ac668'
+ApiKey:String=APIKEY;
   constructor(private http:HttpClient ) {}
 
   getMovies(type: String='upcoming', count :number=12){
